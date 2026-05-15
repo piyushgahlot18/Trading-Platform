@@ -17,7 +17,7 @@ const WatchList = () => {
   useEffect(() => {
     const fetchStocks = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/stocks");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/stocks`);
         setStocks(res.data);
       } catch (error) {
         console.error("Error fetching stocks:", error);
