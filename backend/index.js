@@ -1,4 +1,6 @@
 require("dotenv").config();
+const PORT = process.env.PORT || 3000;
+
 
 const axios = require("axios");
 const express = require("express");
@@ -351,7 +353,7 @@ app.get("/chart", async (req, res) => {
 
 });
 
-app.listen(3002,()=>{
+app.listen(PORT,()=>{
     console.log("App started");
     mongoose.connect(uri);
     console.log("DB connected");
